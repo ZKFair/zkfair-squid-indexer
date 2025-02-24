@@ -54,4 +54,4 @@ services:
       - indexer
     env_file: ./envs/.env.indexer.example
     ports:
-      - "10048:8000"
+      - "10002:8000"
