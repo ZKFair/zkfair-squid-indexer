@@ -35,7 +35,7 @@ export class EVMProcessor implements IProcessor {
     const evmProcessor = new EvmBatchProcessor()
       .setRpcEndpoint({
         url: this.rpcUrl,
-        rateLimit: 200,
+        rateLimit: 300,
       })
       .setBlockRange({ from: domain.startBlock })
       .setFinalityConfirmation(domain.blockConfirmations)
