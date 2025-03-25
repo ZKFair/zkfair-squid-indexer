@@ -36,7 +36,7 @@ services:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_PASSWORD: ${DB_PASS}
     ports:
-      - "23798:${DB_PORT}"
+      - "23799:${DB_PORT}"
     env_file: ./envs/.env.indexer.example
   indexer:
     build: 
@@ -54,4 +54,4 @@ services:
       - indexer
     env_file: ./envs/.env.indexer.example
     ports:
-      - "10002:8000"
+      - "10003:8000"
