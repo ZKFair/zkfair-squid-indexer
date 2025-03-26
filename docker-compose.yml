@@ -32,7 +32,7 @@ services:
 
   db:
     image: postgres:15
-    container_name: zkfair-bridge-postgres
+    container_name: zkfair-mainnet-bridge-postgres
     environment:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_PASSWORD: ${DB_PASS}
@@ -40,7 +40,7 @@ services:
       - "23780:${DB_PORT}"
     env_file: ./envs/.env.indexer.example
   indexer:
-    container_name: zkfair-bridge-indexer
+    container_name: zkfair-mainnet-bridge-indexer
     build: 
       context: .
       dockerfile: ./Dockerfile 
@@ -49,7 +49,7 @@ services:
       - db
     env_file: ./envs/.env.indexer.example
   api:
-    container_name: zkfair-bridge-api
+    container_name: zkfair-mainnet-bridge-api
     build: 
       context: .
       dockerfile: ./Dockerfile.api
