@@ -28,6 +28,7 @@ import type {
   DecodedFailedHandlerExecutionLog,
   FeeCollectedData,
 } from "../types";
+import { logger as rootLogger } from "../../utils/logger";
 
 import type { Context } from "./evmProcessor";
 import { ContractType } from "./evmTypes";
@@ -87,9 +88,8 @@ export class EVMParser implements IParser {
         domainID: fromDomain.id.toString(),
       },
     });
-    this.logger.warn(
-      `11111111111: ${token} 111111111111`,
-    );
+
+    rootLogger.info( `11111111111: ${token} 111111111111`);
     if (!token) {
       throw new NotFoundError(
         `Token with resourceID: ${event.resourceID.toLowerCase()} doesn't exist, skipping`,
