@@ -37,7 +37,7 @@ services:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_PASSWORD: ${DB_PASS}
     ports:
-      - "23799:${DB_PORT}"
+      - "23780:${DB_PORT}"
     env_file: ./envs/.env.indexer.example
   indexer:
     container_name: zkfair-bridge-indexer
@@ -57,4 +57,4 @@ services:
       - indexer
     env_file: ./envs/.env.indexer.example
     ports:
-      - "10003:8000"
+      - "10004:8000"
